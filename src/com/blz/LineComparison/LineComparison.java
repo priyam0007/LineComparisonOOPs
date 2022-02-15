@@ -3,15 +3,18 @@ package com.blz.LineComparison;
  import java.util.Scanner;
 
    public class LineComparison {
-	   public static int x1,x2,y1,y2,x3,x4,y3,y4;
-		public static void main(String[] args) {
-			getInput();
+	   public static void main(String[] args) {
+			GetInput input = new GetInput();
+			input.getInput();
 			CalculateLength cal = new CalculateLength();
 			cal.calLength();
 			CompareLength compare = new CompareLength();
 			compare.checkEquality();
 		}
-		public static void getInput() {
+	}
+	class GetInput{
+		public static int x1,x2,y1,y2,x3,x4,y3,y4;
+		public  void getInput() {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("For given line");
 			System.out.println("Enter co-ordinates of x1 and y1");
@@ -32,9 +35,9 @@ package com.blz.LineComparison;
 	class CalculateLength{
 			static Double length1,length2;
 			public void calLength() {
-			    length1 = Math.sqrt((LineComparison.x2 - LineComparison.x1) * (LineComparison.x2 - LineComparison.x1) + (LineComparison.y2 - LineComparison.y1) * (LineComparison.y2 - LineComparison.y1));
+			    length1 = Math.sqrt((GetInput.x2 - GetInput.x1) * (GetInput.x2 - GetInput.x1) + (GetInput.y2 - GetInput.y1) * (GetInput.y2 - GetInput.y1));
 				System.out.println("Length of first line = "+length1+" units");
-			    length2 = Math.sqrt((LineComparison.x4 - LineComparison.x3) * (LineComparison.x4 - LineComparison.x3) + (LineComparison.y4 - LineComparison.y3) * (LineComparison.y4 - LineComparison.y3));
+			    length2 = Math.sqrt((GetInput.x4 - GetInput.x3) * (GetInput.x4 - GetInput.x3) + (GetInput.y4 - GetInput.y3) * (GetInput.y4 - GetInput.y3));
 				System.out.println("Length of second line = "+length2+" units");
 			}
 	}
@@ -52,4 +55,4 @@ package com.blz.LineComparison;
 			}
 	}
    
-	   
+	 
